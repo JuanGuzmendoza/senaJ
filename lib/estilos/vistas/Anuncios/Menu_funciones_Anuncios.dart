@@ -24,9 +24,9 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
           onPressed: () {},
         ),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
-          children: [
+          children: const [
             AprendizCaja(
               nombre: "Juan Guzman",
               tiempo: 'Hace 3 Dias',
