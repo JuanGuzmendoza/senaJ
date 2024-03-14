@@ -56,16 +56,16 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          if (clickcounter == 0) {
-            click = 'click';
-          } else {
-            click = 'clicks';
-          }
-          setState(() {
-            clickcounter++;
-          });
+
         },
-        child: const Icon(Icons.plus_one),
+          child: const Icon(Icons.add), // Icono del botón
+          backgroundColor: Color.fromARGB(255, 215, 252, 172), // Color de fondo del botón
+          foregroundColor: Colors.green, // Color del contenido del botón (icono, texto, etc.)
+          elevation: 10.0, // Elevación del botón
+          tooltip: 'Agregar CV', // Texto emergente al mantener presionado el botón
+          shape: CircleBorder(),// Forma del botón (en este caso, redondeado)
+          heroTag: 'boton_cv', // Identificador único para el botón flotante
+        
       ),
     );
   }
@@ -105,6 +105,7 @@ class AprendizCaja extends StatelessWidget {
                     0, 5), // Desplazamiento de la sombra en dirección vertical
               ),
             ],
+            
           ),
           child: Row(
             children: [
@@ -148,6 +149,7 @@ class AprendizCaja extends StatelessWidget {
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        fontFamily: "Miyoshi",
                       ),
                     ),
                     Text(tiempo),
