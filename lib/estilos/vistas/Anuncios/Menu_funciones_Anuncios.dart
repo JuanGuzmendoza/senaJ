@@ -17,7 +17,7 @@ String click='clicks';
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-
+        backgroundColor: Colors.green,
         leading: IconButton(icon:Image.network('assets/icono.png'), 
         onPressed: ()
          { },),),
@@ -71,7 +71,7 @@ String click='clicks';
                    child: Column(
 
                       children:  const [   
-                      Text('\nPROYECTO ANGULAR_FRONT', style: TextStyle(
+                      Text('PROYECTO ANGULAR_FRONT', style: TextStyle(
                           overflow: TextOverflow.ellipsis,
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontSize: 18,
@@ -80,7 +80,6 @@ String click='clicks';
                        
                       ),
                       Text('Creado hace 2 dias'),
-                        
                     ],
                     ),)
                   ],
