@@ -1,7 +1,5 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AnunciosFuncion extends StatefulWidget {
   const AnunciosFuncion({Key? key}) : super(key: key);
@@ -25,33 +23,194 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            AprendizCaja(
-              nombre: "Juan Guzman",
-              tiempo: 'Hace 3 Dias',
-              imageUrl:
-                  "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+        
+        child: ScrollConfiguration(
+             behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+          child: SingleChildScrollView(
+             
+            child: Column(
+              children: const [
+                  AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),  AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Ucros",
+                  tiempo: "Hace 5 dias",
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
+                ),
+                      AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Ucros",
+                  tiempo: "Hace 5 dias",
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
+                ),
+                  AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Ucros",
+                  tiempo: "Hace 5 dias",
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
+                ),
+                      AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Ucros",
+                  tiempo: "Hace 5 dias",
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
+                ),  AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Ucros",
+                  tiempo: "Hace 5 dias",
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
+                ),
+                      AprendizCaja(
+                  nombre: "Juan Guzman",
+                  tiempo: 'Hace 3 Dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
+                ),
+                AprendizCaja(
+                  nombre: "Narvaez orellano",
+                  tiempo: 'Hace 1 dias',
+                  imageUrl:
+                      "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
+                ),
+                AprendizCaja(
+                  nombre: "jorge manotas",
+                  tiempo: 'Hace 2 dias',
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
+                ),
+                AprendizCaja(
+                  nombre: "Juan Ucros",
+                  tiempo: "Hace 5 dias",
+                  imageUrl:
+                      'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
+                ),
+              ],
             ),
-            AprendizCaja(
-              nombre: "Narvaez orellano",
-              tiempo: 'Hace 1 dias',
-              imageUrl:
-                  "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdTMrADeV_Zu0nCp29VrtlxEHWc3m9SyxL9i4hJzRdmM0A&oe=65FEDEC7&_nc_sid=e6ed6c&_nc_cat=105",
-            ),
-            AprendizCaja(
-              nombre: "jorge manotas",
-              tiempo: 'Hace 2 dias',
-              imageUrl:
-                  'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/422422468_350829564426021_584730823223991959_n.jpg?ccb=11-4&oh=01_AdSWqJ1in0Pw4EQQ4nrNMvi_Rp_rpg6HRMIyoDKyacKQ6A&oe=65FF3CF8&_nc_sid=e6ed6c&_nc_cat=109',
-            ),
-            AprendizCaja(
-              nombre: "Juan Ucros",
-              tiempo: "Hace 5 dias",
-              imageUrl:
-                  'https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/427984318_1448300532784514_1239689403133666850_n.jpg?ccb=11-4&oh=01_AdSLnBIYENyZSdCiSwUa8UHSwL-WI4iCCqm2GllxP68XCA&oe=65FF0E56&_nc_sid=e6ed6c&_nc_cat=100',
-            ),
-          ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -94,15 +253,14 @@ class AprendizCaja extends StatelessWidget {
           height: 60,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: const Color.fromARGB(255, 221, 221, 221),
+            color: const Color.fromARGB(255, 255, 255, 255),
             boxShadow: [
               BoxShadow(
-                color: const Color.fromARGB(255, 158, 158, 158)
+                color: const Color.fromARGB(255, 199, 199, 199)
                     .withOpacity(0.5), // Color de la sombra
                 spreadRadius: 2, // Radio de propagación de la sombra
                 blurRadius: 5, // Radio de desenfoque de la sombra
-                offset: const Offset(
-                    0, 5), // Desplazamiento de la sombra en dirección vertical
+                offset:  Offset(1, 3), // Desplazamiento de la sombra en dirección vertical
               ),
             ],
           ),
@@ -114,7 +272,7 @@ class AprendizCaja extends StatelessWidget {
                 child: Container(
                   width: 56,
                   decoration: const BoxDecoration(
-                    color: Colors.green,
+                    color: Color.fromARGB(255, 64, 155, 67),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(10.0),
                       bottomLeft: Radius.circular(10.0),
@@ -138,20 +296,23 @@ class AprendizCaja extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 onHover: (value) {},
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      nombre,
-                      style: const TextStyle(
-                        overflow: TextOverflow.ellipsis,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        nombre,
+                        style: const TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text(tiempo),
-                  ],
+                      Text(tiempo),
+                    ],
+                  ),
                 ),
               )
             ],
