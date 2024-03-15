@@ -26,10 +26,10 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
         
         child: ScrollConfiguration(
              behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: SingleChildScrollView(
+          child: const SingleChildScrollView(
              
             child: Column(
-              children: const [
+              children: [
                   AprendizCaja(
                   nombre: "Juan Guzman",
                   tiempo: 'Hace 3 Dias',
@@ -243,11 +243,69 @@ class AprendizCaja extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(25.0),
-      child: InkWell(
-        onTap: () {},
-        onHover: (value) {},
+    return GestureDetector(
+           onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title:Container(
+                alignment: Alignment.bottomLeft,
+                width: 30,
+                height: 30,
+               child: Image.network('assets/icono.png') ,
+
+              ),
+              content: Container(
+                    width: 300,
+                    height: 300,
+                    child: Column(children: [
+                      Text(nombre,style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                       
+                    ],),
+              ),
+              
+              actions: <Widget>[
+                            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cerrar'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                showDialog(
+          context: context,
+          builder: (BuildContext context){
+                  return AlertDialog(
+                  title: Text('ENVIADO CON EXITO'),
+                  content: ElevatedButton(
+                    onPressed: () {
+                          Navigator.of(context).pop();
+                    },
+                    child: Text('Cerrar'),
+                    
+                  ),
+                  );
+                   
+                   },);
+            },
+              child: Text('Enviar'),
+            ),
+
+              ],
+              );
+          },
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(25.0),
         child: Container(
           width: 400,
           height: 60,
@@ -257,62 +315,54 @@ class AprendizCaja extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: const Color.fromARGB(255, 199, 199, 199)
-                    .withOpacity(0.5), // Color de la sombra
-                spreadRadius: 2, // Radio de propagación de la sombra
-                blurRadius: 5, // Radio de desenfoque de la sombra
-                offset:  Offset(1, 3), // Desplazamiento de la sombra en dirección vertical
+                    .withOpacity(0.5), 
+                spreadRadius: 2, 
+                blurRadius: 5, 
+                offset:  Offset(1, 3), 
               ),
             ],
           ),
-          child: Row(
+          child:Row(
             children: [
-              InkWell(
-                onTap: () {},
-                onHover: (value) {},
-                child: Container(
-                  width: 56,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 64, 155, 67),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10.0),
-                      bottomLeft: Radius.circular(10.0),
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(1010.0),
-                        child: Image.network(
-                            imageUrl, // Ruta de la imagen dentro del proyecto
-                            width: 40, // Ancho de la imagen
-                            height: 40, // Alto de la imagen
-                            fit: BoxFit.cover),
-                      ),
-                    ],
+              Container(
+                width: 56,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 64, 155, 67),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.0),
+                    bottomLeft: Radius.circular(10.0),
                   ),
                 ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(1010.0),
+                      child: Image.network(
+                          imageUrl, // Ruta de la imagen dentro del proyecto
+                          width: 40, // Ancho de la imagen
+                          height: 40, // Alto de la imagen
+                          fit: BoxFit.cover),
+                    ),
+                  ],
+                ),
               ),
-              InkWell(
-                onTap: () {},
-                onHover: (value) {},
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        nombre,
-                        style: const TextStyle(
-                          overflow: TextOverflow.ellipsis,
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                nombre,
+                      style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Text(tiempo),
-                    ],
-                  ),
+                    ),
+                    Text(tiempo),
+                  ],
                 ),
               )
             ],
