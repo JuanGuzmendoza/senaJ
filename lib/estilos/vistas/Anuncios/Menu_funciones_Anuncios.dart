@@ -103,21 +103,24 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
         backgroundColor: const Color.fromARGB(255, 195, 240, 196),
         onPressed: () {
           showDialog(
+            
                    context: context,
           builder: (BuildContext context){
             return  AlertDialog(
+            
  title:Container(
+  
                 alignment: Alignment.bottomLeft,
                 width: 30,
                 height: 30,
                child: Image.network('assets/icono.png') ,
 
               ),
-              content: Container(
+              content:  const SizedBox(
                     width: 300,
                     height: 300,
-                    child: const Column(children: [
-                      Text("Subir Hoja de vida",style: const TextStyle(
+                    child: Column(children: [
+                      Text("Subir Hoja de vida",style: TextStyle(
                         overflow: TextOverflow.ellipsis,
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 30,
@@ -194,14 +197,44 @@ class AprendizCaja extends StatelessWidget {
               content: Container(
                     width: 300,
                     height: 300,
-                    child: Column(children: [
+                    child: Column(
+                      children: [
                       Text(nombre,style: const TextStyle(
                         overflow: TextOverflow.ellipsis,
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),),
-                       
+                    const Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(height: 30),
+                         Text(
+                'Curso: ',
+                 style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+              ),
+               Text(
+                'Edad: ',style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+              ),),
+              Text(
+                'Telefono: ',style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+              ),
+              ),
+                      ],
+                    )
                     ],),
               ),
               
