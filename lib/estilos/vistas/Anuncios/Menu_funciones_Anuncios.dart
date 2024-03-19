@@ -24,10 +24,10 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
         
         child: ScrollConfiguration(
              behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: const SingleChildScrollView(
+          child:  SingleChildScrollView(
              
             child: Column(
-              children: [
+              children: const [
                   AprendizCaja(
                   nombre: "Juan Guzman",
                   tiempo: 'Hace 3 Dias',
@@ -99,35 +99,82 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 195, 240, 196),
-        onPressed: () {
-          showDialog(
-                   context: context,
-          builder: (BuildContext context){
-            return  AlertDialog(
- title:Container(
-                alignment: Alignment.bottomLeft,
-                width: 30,
-                height: 30,
-               child: Image.network('assets/icono.png') ,
+floatingActionButton: FloatingActionButton(
+  backgroundColor:  Color.fromARGB(255, 195, 240, 196),
+  onPressed: () {
+    final List<String> cities = ['New York', 'London', 'Paris', 'Tokyo'];
+    String selectedCity = 'London'; // Valor inicial seleccionado
+    showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          backgroundColor: Color.fromARGB(255, 226, 226, 226),
+          title: Container(
+            alignment: Alignment.bottomLeft,
+            width: 30,
+            height: 30,
+            child: Image.network('assets/icono.png'),
+          ),
+          content: SizedBox(
+            width: 300,
+            height: 300,
+            child: Column(
+              children:[
+                Text("Subir Hoja de vida",
+                  style: TextStyle(
+                    overflow: TextOverflow.ellipsis,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "Selecciona el curso:",
+                  style: TextStyle(
+                    fontSize: 16
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 40,
+                    decoration: BoxDecoration(
+                      
+    color: Color.fromARGB(255, 255, 255, 255),
+    borderRadius: BorderRadius.all(
+      Radius.circular(10.0),
+    ),
+  ),
+                  child: DropdownButton<String>(
+                    dropdownColor:Color.fromARGB(255, 223, 222, 222),
+                     iconEnabledColor: Color.fromARGB(255, 0, 0, 0),
+                    focusColor: Color.fromARGB(255, 237, 238, 237),
+             
+                    value: selectedCity,
+                    onChanged: (String? newValue) {
+                      if(newValue != null){
+                        setState(() {
+                          selectedCity = newValue;
+                        });
+                      }
+                    },
+                    items: cities.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        
+                        value: value,
+                        child: Text(value),
+                            );
+  }).toList(),
+   style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+    underline: SizedBox.shrink(), 
+                  ),
+                )
 
-              ),
-              content: Container(
-                    width: 300,
-                    height: 300,
-                    child: const Column(children: [
-                      Text("Subir Hoja de vida",style: const TextStyle(
-                        overflow: TextOverflow.ellipsis,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),)
-                    ],),
-              ),
-              
-              actions: <Widget>[
-                            ElevatedButton(
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -137,30 +184,29 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
               onPressed: () {
                 Navigator.of(context).pop();
                 showDialog(
-          context: context,
-          builder: (BuildContext context){
-                  return AlertDialog(
-                  title: const Text('Creado con exito'),
-                  content: ElevatedButton(
-                    onPressed: () {
+                  context: context,
+                  builder: (BuildContext context){
+                    return AlertDialog(
+                      title: const Text('Creado con exito'),
+                      content: ElevatedButton(
+                        onPressed: () {
                           Navigator.of(context).pop();
-                    },
-                    child: const Text('Cerrar'),
-                    
-                  ),
-                  );
-                   
-                   },);
-            },
+                        },
+                        child: const Text('Cerrar'),
+                      ),
+                    );
+                  },
+                );
+              },
               child: const Text('Subir'),
             ),
-
-              ],
-          );
-        } ,);
-        },
-        child: const Icon(Icons.add_box),
-      ),
+          ],
+        );
+      },
+    );
+  },
+  child: const Icon(Icons.note_add_rounded),
+),
     );
   }
 }
