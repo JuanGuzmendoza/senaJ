@@ -28,11 +28,9 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
         child: Column(
           children: const [
             AprendizCaja(
-              nombre: "Juan Guzman",
-              tiempo: 'Hace 3 Dias',
-              imageUrl:
-                  "https://media-bog2-1.cdn.whatsapp.net/v/t61.24694-24/394696481_931691015158165_6535457215143940829_n.jpg?ccb=11-4&oh=01_AdRVjoH70yjOXjHmxVwZhQxXAlzQiuVQMkzCPyCodlZHFA&oe=66001681&_nc_sid=e6ed6c&_nc_cat=103",
-            ),
+                nombre: "Juan Guzman",
+                tiempo: 'Hace 3 Dias',
+                imageUrl: "assets/icono.png"),
             AprendizCaja(
               nombre: "Narvaez orellano",
               tiempo: 'Hace 1 dias',
@@ -55,17 +53,17 @@ class _AnunciosFuncionState extends State<AnunciosFuncion> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-
-        },
-          child: const Icon(Icons.add), // Icono del botón
-          backgroundColor: Color.fromARGB(255, 215, 252, 172), // Color de fondo del botón
-          foregroundColor: Colors.green, // Color del contenido del botón (icono, texto, etc.)
-          elevation: 10.0, // Elevación del botón
-          tooltip: 'Agregar CV', // Texto emergente al mantener presionado el botón
-          shape: CircleBorder(),// Forma del botón (en este caso, redondeado)
-          heroTag: 'boton_cv', // Identificador único para el botón flotante
-        
+        onPressed: () {},
+        child: const Icon(Icons.add), // Icono del botón
+        backgroundColor:
+            Color.fromARGB(255, 215, 252, 172), // Color de fondo del botón
+        foregroundColor:
+            Colors.green, // Color del contenido del botón (icono, texto, etc.)
+        elevation: 10.0, // Elevación del botón
+        tooltip:
+            'Agregar CV', // Texto emergente al mantener presionado el botón
+        shape: CircleBorder(), // Forma del botón (en este caso, redondeado)
+        heroTag: 'boton_cv', // Identificador único para el botón flotante
       ),
     );
   }
@@ -105,7 +103,6 @@ class AprendizCaja extends StatelessWidget {
                     0, 5), // Desplazamiento de la sombra en dirección vertical
               ),
             ],
-            
           ),
           child: Row(
             children: [
