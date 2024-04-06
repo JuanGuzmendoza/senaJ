@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:sencvp/PRESENTACION/WIDGETS/perfiles_aprendizes/Alerta_Aprendiz.dart';
-
 class AprendizCaja extends StatelessWidget {
   final String nombre;
-  final String tiempo;
-  final String imageUrl;
   const AprendizCaja({
     super.key,
     required this.nombre,
-    required this.tiempo,
-    required this.imageUrl,
   });
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -59,7 +55,7 @@ class AprendizCaja extends StatelessWidget {
                       borderRadius: BorderRadius.circular(1010.0),
                       child: CachedNetworkImage(
                           imageUrl:
-                              imageUrl, // Ruta de la imagen dentro del proyecto
+                              "assets/icono.png", // Ruta de la imagen dentro del proyecto
                           width: 40, // Ancho de la imagen
                           height: 40, // Alto de la imagen
                           fit: BoxFit.cover),
@@ -81,7 +77,7 @@ class AprendizCaja extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(tiempo),
+                    Text("...."),
                   ],
                 ),
               )

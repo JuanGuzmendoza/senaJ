@@ -1,8 +1,13 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 import 'package:sencvp/PRESENTACION/WIDGETS/perfiles_aprendizes/Cajas_Informacion.dart';
 import 'package:sencvp/PRESENTACION/WIDGETS/perfiles_aprendizes/Button_Submit_CVC.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
+import 'package:sencvp/service/firestore.dart';
+  //firestore
+  final FirestoreService fireStoreService = FirestoreService();
 class Perfiles_Aprendiz extends StatefulWidget {
   const Perfiles_Aprendiz({Key? key}) : super(key: key);
 
@@ -28,32 +33,43 @@ class _Perfiles_AprendizState extends State<Perfiles_Aprendiz> {
         ),
         backgroundColor: Colors.green,
       ),
-      body: Center(
-        child: ScrollConfiguration(
-          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: const SingleChildScrollView(
-            child: Column(
-              children: [
-                AprendizCaja(
-                  nombre: "Aprendiz Sena 1",
-                  tiempo: 'Hace 3 Dias',
-                  imageUrl:
-                      'https://media-bog2-2.cdn.whatsapp.net/v/t61.24694-24/395056401_1829842057476835_8032769912893741143_n.jpg?ccb=11-4&oh=01_AdRZ7GBmYQ31wKtCih4im09jZKrszgBL6Dl-b7wE4SP11w&oe=660EC737&_nc_sid=e6ed6c&_nc_cat=109',
-                ),
-                AprendizCaja(
-                    nombre: "Aprendiz Sena 2",
-                    tiempo: 'Hace 3 Dias',
-                    imageUrl:
-                        'https://media-bog2-2.cdn.whatsapp.net/v/t61.24694-24/390073109_1507241723392349_7736042345332727708_n.jpg?ccb=11-4&oh=01_AdQPPXp8Lic4IYAt0NCN2Bw40kClnOiZzg2IuSjyBN_ugQ&oe=660A1387&_nc_sid=e6ed6c&_nc_cat=105'),
-                AprendizCaja(
-                    nombre: "Aprendiz Sena 3",
-                    tiempo: 'Hace 3 Dias',
-                    imageUrl:
-                        'https://media-bog2-2.cdn.whatsapp.net/v/t61.24694-24/424425054_256306870864408_4284654772809134099_n.jpg?ccb=11-4&oh=01_AdSzIY-ourbjAI5psRKFsF3nfPHBdyElQQt5XZqvMBo9gg&oe=6609FD43&_nc_sid=e6ed6c&_nc_cat=107')
-              ],
-            ),
-          ),
-        ),
+      body: StreamBuilder<QuerySnapshot>(
+         stream: fireStoreService.getNotesStream(),
+         builder: (context, snapshot) {
+          // si hay informacion
+          if (snapshot.hasData){
+            List notesList = snapshot.data!.docs;
+
+            //mostrar como lista
+            return ListView.builder(
+              itemCount: notesList.length,
+              itemBuilder: (context, index){
+                // tomar los documentos individuales
+                DocumentSnapshot document = notesList[index];
+                //tomar el txt de los documentos
+                Map<String, dynamic> data =
+                    document.data() as Map<String, dynamic>;
+                String noteText = data['note'];
+                //mostrar como lista
+                return  ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        AprendizCaja(
+                            nombre: noteText
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+            //si no hay datos
+          } else {
+            return const Text("No notes...");
+          }
+         },
       ),
       floatingActionButton: (BottonCV()),
     );

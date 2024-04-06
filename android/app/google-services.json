@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "315842047554",
+    "project_id": "crud1-ab551",
+    "storage_bucket": "crud1-ab551.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315842047554:android:dc37193820729419aa47db",
+        "android_client_info": {
+          "package_name": "com.example.sencvp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB49rA9wkdf9s-dfdQjU_N-Y5wVChUipbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

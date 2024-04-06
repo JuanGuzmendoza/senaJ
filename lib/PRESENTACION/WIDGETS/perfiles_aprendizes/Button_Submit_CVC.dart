@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sencvp/service/firestore.dart';
 
 class BottonCV extends StatelessWidget {
+  //firestore
+  final FirestoreService fireStoreService = FirestoreService();
+  //text controller
+  final TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -15,20 +20,23 @@ class BottonCV extends StatelessWidget {
                 width: 30,
                 height: 30,
               ),
-              content: const SizedBox(
+              content: SizedBox(
                 width: 300,
                 height: 300,
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       "Subir Hoja de vida",
                       style: TextStyle(
                         overflow: TextOverflow.ellipsis,
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                      ),
-                    )
+                      ), 
+                    ),
+                    TextField(
+                      controller:textController,
+                    ),
                   ],
                 ),
               ),
@@ -41,12 +49,17 @@ class BottonCV extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    //boton crear
+                    fireStoreService.addNote(textController.text);
+                    //borrar texto
+                    textController.clear();
                     Navigator.of(context).pop();
                     showDialog(
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
                           title: const Text('Creado con exito'),
+                          //boton cerrar ventana
                           content: ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pop();

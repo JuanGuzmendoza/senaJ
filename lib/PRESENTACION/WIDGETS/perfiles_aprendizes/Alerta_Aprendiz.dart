@@ -12,7 +12,7 @@ class Alerta extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Container(
-        alignment: Alignment.bottomLeft,
+        color: Colors.black,
         width: 30,
         height: 30,
       ),
@@ -65,6 +65,7 @@ class Alerta extends StatelessWidget {
             )
           ],
         ),
+        
       ),
       actions: <Widget>[
         ElevatedButton(
