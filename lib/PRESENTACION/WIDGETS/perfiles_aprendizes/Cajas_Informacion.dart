@@ -3,9 +3,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:sencvp/PRESENTACION/WIDGETS/perfiles_aprendizes/Alerta_Aprendiz.dart';
 class AprendizCaja extends StatelessWidget {
   final String nombre;
+  final String id;
   const AprendizCaja({
     super.key,
-    required this.nombre,
+    required this.nombre, required this.id,
   });
   
   @override
@@ -15,7 +16,7 @@ class AprendizCaja extends StatelessWidget {
         showDialog(
           context: context,
           builder: (BuildContext context) {
-            return Alerta(nombre: nombre);
+            return Alerta(nombre: nombre,id: id,);
           },
         );
       },
@@ -77,7 +78,7 @@ class AprendizCaja extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("...."),
+                    Text(id),
                   ],
                 ),
               )

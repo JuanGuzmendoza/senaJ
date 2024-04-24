@@ -1,21 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:sencvp/PRESENTACION/WIDGETS/perfiles_aprendizes/form_Update_CVC.dart';
+import 'package:sencvp/service/firestore.dart';
+
 
 class Alerta extends StatelessWidget {
-  const Alerta({
+  final String id ;
+   Alerta({
     super.key,
-    required this.nombre,
+    required this.nombre, required this.id,
   });
-
+   final FirestoreService fireStoreService = FirestoreService();
+  //text controller
+  final TextEditingController textController = TextEditingController();
   final String nombre;
 
   @override
   Widget build(BuildContext context) {
+    void form(){
+        Navigator.of(context).pop();
+ showDialog(
+  
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Container(
+                alignment: Alignment.bottomLeft,
+                width: 30,
+                height: 30,
+              ),
+              content: SizedBox(
+                width: 300,
+                height: 300,
+                child: Column(
+                  children: [
+                    const Text(
+                      "Actualizar hoja de vida",
+                      style: TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ), 
+                    ),
+                    TextField(
+                      controller:textController,
+                    ),
+                  ],
+                ),
+              ),
+              actions: <Widget>[
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Cerrar'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    //boton crear
+                    fireStoreService.updateNote(id,textController.text);
+                    //borrar texto
+                    textController.clear();
+                    Navigator.of(context).pop();
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Actualizado con exito'),
+                          //boton cerrar ventana
+                          content: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text('Cerrar'),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: const Text('Subir'),
+                ),
+              ],
+            );
+          },
+        );
+}
     return AlertDialog(
-      title: Container(
-        color: Colors.black,
-        width: 30,
-        height: 30,
-      ),
+      title: IconButton(
+          onPressed: () => form(), icon: const Icon(Icons.settings)
+        
+          ),
       content: SizedBox(
         width: 300,
         height: 300,
@@ -30,20 +104,20 @@ class Alerta extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Column(
+             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Text(
-                  'Curso: ',
-                  style: TextStyle(
+                  'Id: ${id}',
+                  style: const TextStyle(
                     overflow: TextOverflow.ellipsis,
                     color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   'Edad: ',
                   style: TextStyle(
                     overflow: TextOverflow.ellipsis,
@@ -52,7 +126,7 @@ class Alerta extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   'Telefono: ',
                   style: TextStyle(
                     overflow: TextOverflow.ellipsis,
@@ -65,7 +139,6 @@ class Alerta extends StatelessWidget {
             )
           ],
         ),
-        
       ),
       actions: <Widget>[
         ElevatedButton(

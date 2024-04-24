@@ -46,6 +46,7 @@ class _Perfiles_AprendizState extends State<Perfiles_Aprendiz> {
               itemBuilder: (context, index){
                 // tomar los documentos individuales
                 DocumentSnapshot document = notesList[index];
+                String docID =document.id;
                 //tomar el txt de los documentos
                 Map<String, dynamic> data =
                     document.data() as Map<String, dynamic>;
@@ -57,7 +58,8 @@ class _Perfiles_AprendizState extends State<Perfiles_Aprendiz> {
                     child: Column(
                       children: [
                         AprendizCaja(
-                            nombre: noteText
+                            nombre: noteText,
+                            id: docID,
                         ),
                       ],
                     ),
