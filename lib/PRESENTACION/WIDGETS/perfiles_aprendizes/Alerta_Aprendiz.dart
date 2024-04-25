@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sencvp/PRESENTACION/WIDGETS/perfiles_aprendizes/form_Update_CVC.dart';
 import 'package:sencvp/service/firestore.dart';
 
 
@@ -90,6 +89,7 @@ class Alerta extends StatelessWidget {
           onPressed: () => form(), icon: const Icon(Icons.settings)
         
           ),
+          
       content: SizedBox(
         width: 300,
         height: 300,

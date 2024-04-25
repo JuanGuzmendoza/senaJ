@@ -43,7 +43,7 @@ class AprendizCaja extends StatelessWidget {
               Container(
                 width: 56,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 64, 155, 67),
+                  color: Color.fromARGB(255, 69, 150, 72),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10.0),
                     bottomLeft: Radius.circular(10.0),
@@ -54,12 +54,6 @@ class AprendizCaja extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(1010.0),
-                      child: CachedNetworkImage(
-                          imageUrl:
-                              "assets/icono.png", // Ruta de la imagen dentro del proyecto
-                          width: 40, // Ancho de la imagen
-                          height: 40, // Alto de la imagen
-                          fit: BoxFit.cover),
                     ),
                   ],
                 ),

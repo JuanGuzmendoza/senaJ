@@ -23,12 +23,6 @@ class _Perfiles_AprendizState extends State<Perfiles_Aprendiz> {
         leading: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CachedNetworkImage(
-                imageUrl:
-                    "assets/icono.png", // Ruta de la imagen dentro del proyecto
-                width: 40, // Ancho de la imagen
-                height: 40, // Alto de la imagen
-                fit: BoxFit.cover),
           ],
         ),
         backgroundColor: Colors.green,
